@@ -2,3 +2,8 @@
 This is our Capstone Project of course IT205 
 <br>
 BitwiseCode
+<br>
+manan 
+jenish
+shreyas
+jal
