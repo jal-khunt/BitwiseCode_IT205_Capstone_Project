@@ -1,8 +1,9 @@
 #include<vector> 
 #include<string>
 #include<fstream>
-class File;
 using namespace std;
+#include "claasFile.cpp"
+
 vector<File> inputFile(string input){
 
     string pathOfFile,lastModifiedDate;

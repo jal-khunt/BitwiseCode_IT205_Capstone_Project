@@ -1,6 +1,4 @@
-#include <iostream>
-#include "classFile.cpp"
-#include "input.cpp"
+#include "universal.cpp"
 
 using namespace std;
 
