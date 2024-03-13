@@ -2,7 +2,7 @@
 #include<string>
 #include<fstream>
 using namespace std;
-#include "claasFile.cpp"
+#include "classFile.cpp"
 
 vector<File> inputFile(string input){
 

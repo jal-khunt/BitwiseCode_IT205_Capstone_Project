@@ -2,7 +2,7 @@
 
 #include <fstream>
 #include <string>
-#include "claasFile.cpp"
+#include "classFile.cpp"
 #include "inputFile.cpp"
 
 using namespace std;
