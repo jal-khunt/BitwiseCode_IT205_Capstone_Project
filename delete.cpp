@@ -2,6 +2,14 @@
 #include "universal.cpp"
 using namespace std;
 
+/*
+use delete_file function:
+input:
+    (string) file to be deleted, (string) input
+output:
+    void
+*/
+
 void delete_entry(string spath, char input[]){
 
     ifstream file(input);
