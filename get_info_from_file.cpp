@@ -11,13 +11,6 @@ class fileInfo
         string date;
         int no_opend;
     
-    void setter(string p,string d,int f)
-    {
-        path = p;
-        date = d;
-        no_opend = f;
-    }
-    
     void display(vector<fileInfo> &v)
     {
         for(int i = 0; i < v.size(); i++){
