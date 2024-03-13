@@ -11,7 +11,18 @@ int main(){
 
     vector<File> v = inputFile("input.txt");
     
-    cout << v[0].noOfTimeOpened << endl;
+    int sizeOfV = v.size();
+    int i = 0;
+    while(sizeOfV--){
+        cout << v[i].path << endl;
+
+        if(checkFileCopy(string,v,i)){
+            detleFile(string)
+        }
+        // cout << 1 << endl;
+        i++;
+    }
+    // cout << v[0].noOfTimeOpened << endl;
 
 
     // Close the file
