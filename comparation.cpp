@@ -25,6 +25,20 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     return (!file1.eof() || !file2.eof());
 }
 
+
+// void compareOneToAnother(string input,int i, vector<File> v){
+//     bool allFilesEqual = true;
+//         for(int j = i + 1;j < v.size(); j++){
+//             if (!compareFiles(v[i].path, v[j].path)) {
+//                 cout << "Files are not equal." << endl;
+//                 allFilesEqual = false;
+//             } else {
+//                 cout << "Files are equal." << endl;
+//                 delete_file(v[j].path, input);
+//             }
+//         }
+// }
+
 int main() {
     vector<string> filePaths = {"D:/file1.txt", "D:/file2.txt", "D:/file3.txt"}; // Replace with the paths to your files
 

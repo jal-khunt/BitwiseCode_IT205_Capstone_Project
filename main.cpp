@@ -14,7 +14,7 @@ int main(){
     int sizeOfV = v.size();
     int i = 0;
     while(sizeOfV--){
-        cout << v[i].path << endl;
+        // cout << v[i].path << endl;
 
         if(checkFileCopy(string,v,i)){
             detleFile(string)
