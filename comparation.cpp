@@ -25,8 +25,11 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     return (!file1.eof() || !file2.eof());
 }
 
-/*
-void compareOneToAnother(string input,int i, vector<File> v){
+
+
+
+
+void compareFile(string input,int i, vector<File> v){
     bool allFilesEqual = true;
         for(int j = i + 1;j < v.size(); j++){
             if (!compareFiles(v[i].path, v[j].path)) {
@@ -38,7 +41,11 @@ void compareOneToAnother(string input,int i, vector<File> v){
             }
         }
 }
-*/
+
+
+
+
+
 int main() {
     vector<string> filePaths = {"D:/file1.txt", "D:/file2.txt", "D:/file3.txt"}; // Replace with the paths to your files
 

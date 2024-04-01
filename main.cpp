@@ -14,12 +14,10 @@ int main(){
     int sizeOfV = v.size();
     int i = 0;
     while(sizeOfV--){
-        // cout << v[i].path << endl;
 
-        if(checkFileCopy(string,v,i)){
-            detleFile(string)
+        if(compareFile(v[i].path,i,v)){
+            detleFile(v[i].path,i,v);
         }
-        // cout << 1 << endl;
         i++;
     }
     // cout << v[0].noOfTimeOpened << endl;
