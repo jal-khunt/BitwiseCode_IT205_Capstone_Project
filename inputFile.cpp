@@ -31,3 +31,24 @@ vector<File> inputFile(string input){
     return v;
 
 }
+
+/*
+// Function to read input file and create vector of File objects
+vector<File> inputFile(const string& input) {
+    string pathOfFile, lastModifiedDate;
+    int accessedNumber;
+    vector<File> v;
+    ifstream MyReadFile(input);
+
+    while (MyReadFile >> pathOfFile >> lastModifiedDate >> accessedNumber) {
+        File f;
+        f.path = pathOfFile;
+        f.dateModified = lastModifiedDate;
+        f.noOfTimeOpened = accessedNumber;
+        v.push_back(f);
+    }
+
+    MyReadFile.close();
+    return v;
+}
+*\
