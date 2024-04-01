@@ -1,6 +1,0 @@
-path1 date1 2
-path2 date2 4
-path3 date3 5
-path4 date4 6
-path5 date5 1
-path5 date5 1
