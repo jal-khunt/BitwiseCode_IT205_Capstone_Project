@@ -31,7 +31,7 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
 
 
 
-
+/*
 
 void compareFile(string input,int i, vector<File> v){
     bool allFilesEqual = true;
@@ -46,7 +46,7 @@ void compareFile(string input,int i, vector<File> v){
         }
 }
 
-
+*/
 
 
 
