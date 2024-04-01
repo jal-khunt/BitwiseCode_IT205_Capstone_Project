@@ -2,9 +2,11 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "classFile.cpp" // Include the header file or definition of File class
 
 using namespace std;
 
+// Function to compare files
 bool compareFiles(const string& filePath1, const string& filePath2) {
     ifstream file1(filePath1);
     ifstream file2(filePath2);
@@ -39,15 +41,17 @@ void compareOneToAnother(string input,int i, vector<File> v){
         }
 }
 */
+
 int main() {
-    vector<string> filePaths = {"D:/file1.txt", "D:/file2.txt", "D:/file3.txt"}; // Replace with the paths to your files
+    string inputFilePath = "input.txt"; // Path to input file
+    vector<File> files = inputFile(inputFilePath); // Read input file and get vector of File objects
 
     bool allFilesEqual = true;
 
-    for (size_t i = 0; i < filePaths.size(); ++i) {
-        for (size_t j = i + 1; j < filePaths.size(); ++j) {
-            cout << "Comparing " << filePaths[i] << " and " << filePaths[j] << ": ";
-            if (!compareFiles(filePaths[i], filePaths[j])) {
+    for (size_t i = 0; i < files.size(); ++i) {
+        for (size_t j = i + 1; j < files.size(); ++j) {
+            cout << "Comparing " << files[i].name << " and " << files[j].name << ": ";
+            if (!compareFiles(files[i].path, files[j].path)) {
                 cout << "Files are not equal." << endl;
                 allFilesEqual = false;
             } else {
