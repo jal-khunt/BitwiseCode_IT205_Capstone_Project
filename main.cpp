@@ -10,19 +10,7 @@ int main(){
     vector<File> v = inputFile("input.txt");
 
     if(strcmp(file_extension, txt)){
-        int sizeOfV = v.size();
-        int i = 0;
-        while(sizeOfV--){
 
-            if(compare_months(v,i,8)){
-                delete_File(v[i].path,i,v);
-            }
-
-            if(compareFile(v[i].path,i,v)){
-                delete_File(v[i].path,i,v);
-            }
-            i++;
-        }
     }
     else if(strcmp(file_extension, csv)){
 
