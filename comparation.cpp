@@ -2,8 +2,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "classFile.cpp"
-#include "inputFile.cpp" // Include the header file or definition of File class
+#include "classFile.cpp" // Include the header file or definition of File class
+#include "inputFile.cpp" 
+#include "delete.cpp"
 
 using namespace std;
 
