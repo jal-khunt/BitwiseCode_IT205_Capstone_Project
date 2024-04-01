@@ -3,8 +3,8 @@
 #include <string>
 #include <vector>
 #include "classFile.cpp" // Include the header file or definition of File class
-#include "inputFile.cpp" 
 #include "delete.cpp"
+#include "inputFile.cpp"
 
 using namespace std;
 
@@ -29,11 +29,8 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     return (!file1.eof() || !file2.eof());
 }
 
-
-
 /*
-
-void compareFile(string input,int i, vector<File> v){
+void compareOneToAnother(string input,int i, vector<File> v){
     bool allFilesEqual = true;
         for(int j = i + 1;j < v.size(); j++){
             if (!compareFiles(v[i].path, v[j].path)) {
@@ -45,9 +42,7 @@ void compareFile(string input,int i, vector<File> v){
             }
         }
 }
-
 */
-
 
 
 int main() {
@@ -64,6 +59,8 @@ int main() {
                 allFilesEqual = false;
             } else {
                 cout << "Files are equal." << endl;
+                // Delete one of the files
+                delete_file(files[j].path, files);
             }
         }
     }
