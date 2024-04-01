@@ -4,7 +4,7 @@
 #include <string>
 #include "classFile.cpp"
 #include "inputFile.cpp"
-
+#include"comparation.cpp"
 using namespace std;
 
 int main(){
