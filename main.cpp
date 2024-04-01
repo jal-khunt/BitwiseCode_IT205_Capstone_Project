@@ -1,10 +1,11 @@
 #include<bits/stdc++.h>
-
 #include <fstream>
 #include <string>
 #include "classFile.cpp"
 #include "inputFile.cpp"
-#include"comparation.cpp"
+#include "comparation.cpp"
+#include "compare_file_older_months.cpp" 
+#include "delete.cpp"
 using namespace std;
 
 int main(){
@@ -15,14 +16,14 @@ int main(){
     int i = 0;
     while(sizeOfV--){
 
+        if(compare_months(v,i,8)){
+            delete_File(v[i].path,i,v);
+        }
+
         if(compareFile(v[i].path,i,v)){
-            detleFile(v[i].path,i,v);
+            delete_File(v[i].path,i,v);
         }
         i++;
     }
-    // cout << v[0].noOfTimeOpened << endl;
-
-
-    // Close the file
     return 0;
 }

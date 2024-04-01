@@ -1,5 +1,4 @@
 #include <iostream>
-#include "universal.cpp"
 using namespace std;
 
 /*
