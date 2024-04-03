@@ -75,6 +75,22 @@ vector<File> inputFile(const string& input) {
 }
 */
 
+/*
+optional 
+void compareOneToAnother(string input,int i, vector<File> v){
+    bool allFilesEqual = true;
+        for(int j = i + 1;j < v.size(); j++){
+            if (!compareFiles(v[i].path, v[j].path)) {
+                cout << "Files are not equal." << endl;
+                allFilesEqual = false;
+            } else {
+                cout << "Files are equal." << endl;
+                delete_file(v[j].path, input);
+            }
+        }
+}
+*/
+
 // Function to compare files and delete duplicates
 void compareAndDelete(vector<File>& files) {
     bool allFilesEqual = true;
