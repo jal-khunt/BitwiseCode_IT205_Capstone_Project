@@ -31,16 +31,18 @@ int main(){
     vector<File> v;
 
     if(strcmp(file_extension, txt)){
-        v = inputFile("input.txt");
+        v = inputFileTXT(s);
     }
     else if(strcmp(file_extension, csv)){
-
+        v = inputFileCSV(s);
     }
     else{
         cout << "Please ecnter valid .txt or .csv files\n";
     }
 
     //vector v is set;
+
+    for(int i = 0; i < v.size(); i++) cout << v[i].path << endl;
 
 
     
