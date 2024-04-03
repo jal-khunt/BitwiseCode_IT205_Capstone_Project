@@ -51,4 +51,4 @@ vector<File> inputFile(const string& input) {
     MyReadFile.close();
     return v;
 }
-*\
+*/
