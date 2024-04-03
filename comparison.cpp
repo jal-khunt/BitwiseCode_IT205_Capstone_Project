@@ -7,11 +7,13 @@
 #include "delete.cpp"
 #include "inputFile.cpp"
 
+// this function will check the text of content1 and content2 
 bool compare_text(const string& text1, const string& text2) {
     return text1 == text2;
 }
 
 // Function to compare files
+
 bool compareFiles(const string& filePath1, const string& filePath2) {
     ifstream file1(filePath1);
     ifstream file2(filePath2);
@@ -70,6 +72,22 @@ vector<File> inputFile(const string& input) {
 
     MyReadFile.close();
     return v;
+}
+*/
+
+/*
+optional 
+void compareOneToAnother(string input,int i, vector<File> v){
+    bool allFilesEqual = true;
+        for(int j = i + 1;j < v.size(); j++){
+            if (!compareFiles(v[i].path, v[j].path)) {
+                cout << "Files are not equal." << endl;
+                allFilesEqual = false;
+            } else {
+                cout << "Files are equal." << endl;
+                delete_file(v[j].path, input);
+            }
+        }
 }
 */
 
