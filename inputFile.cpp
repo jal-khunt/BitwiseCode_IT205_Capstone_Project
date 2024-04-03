@@ -50,7 +50,7 @@ vector<File> inputFileCSV(string input){
         c[line.size()-1] = '\0';
         for(int i = 0; i < line.size(); i++) c[i] = line[i];
         sscanf(c, "%s,%s,%s", f.path, f.dateModified, f.noOfTimeOpened);
-        cout << 
+        cout << f.path << " " << f.dateModified << " " << f.noOfTimeOpened << endl;
         i++;
         v.push_back(f);
     }

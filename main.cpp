@@ -37,7 +37,7 @@ int main(){
         v = inputFileCSV(s);
     }
     else{
-        cout << "Please ecnter valid .txt or .csv files\n";
+        cout << "Please enter valid .txt or .csv files\n";
     }
 
     //vector v is set;
