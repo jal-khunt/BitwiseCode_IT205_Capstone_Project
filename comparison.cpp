@@ -76,7 +76,7 @@ vector<File> inputFile(const string& input) {
 */
 
 /*
-optional 
+optional can be use by making changes in the main function  
 void compareOneToAnother(string input,int i, vector<File> v){
     bool allFilesEqual = true;
         for(int j = i + 1;j < v.size(); j++){
