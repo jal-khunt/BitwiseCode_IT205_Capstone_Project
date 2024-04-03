@@ -1,4 +1,7 @@
-#include "universal.cpp"
+#include<iostream>
+#include<vector>
+#include <string>
+#include "classFile.cpp"
 
 class File;
 

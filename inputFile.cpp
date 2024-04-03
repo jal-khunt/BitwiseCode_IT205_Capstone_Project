@@ -2,7 +2,7 @@
 #include<string>
 #include<fstream>
 using namespace std;
-// #include "classFile.cpp"
+#include "classFile.cpp"
 
 vector<File> inputFile(string input){
 
@@ -51,4 +51,4 @@ vector<File> inputFile(const string& input) {
     MyReadFile.close();
     return v;
 }
-*\
+*/

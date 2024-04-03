@@ -1,4 +1,11 @@
-#include "universal.cpp"
+#include<iostream>
+#include<vector>
+#include <string>
+#include <fstream>
+
+#include "classFile.cpp"
+#include "delete.cpp"
+#include "inputFile.cpp"
 
 bool compare_text(const string& text1, const string& text2) {
     return text1 == text2;
@@ -72,14 +79,14 @@ void compareAndDelete(vector<File>& files) {
 
     for (size_t i = 0; i < files.size(); ++i) {
         for (size_t j = i + 1; j < files.size(); ++j) {
-            cout << "Comparing " << files[i].name << " and " << files[j].name << ": ";
+            cout << "Comparing " << files[i].path << " and " << files[j].path << ": ";
             if (!compareFiles(files[i].path, files[j].path)) {
                 cout << "Files are not equal." << endl;
                 allFilesEqual = false;
             } else {
                 cout << "Files are equal." << endl;
                 // Delete one of the files
-                delete_file(files[j].path, files, j); // Pass the index of the file to be deleted
+                delete_file(files[j].path, j, files); // Pass the index of the file to be deleted
             }
         }
     }
@@ -89,13 +96,4 @@ void compareAndDelete(vector<File>& files) {
     } else {
         cout << "Some files are not equal." << endl;
     }
-}
-
-int main() {
-    string inputFilePath = "input.txt"; // Path to input file
-    vector<File> files = inputFile(inputFilePath); // Read input file and get vector of File objects
-
-    compareAndDelete(files);
-
-    return 0;
 }
