@@ -42,7 +42,13 @@ int main(){
 
     //vector v is set;
 
-    for(int i = 0; i < v.size(); i++) cout << v[i].path << endl;
+    for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << v[i].noOfTimeOpened << endl;
+
+    //cout << v.size() << endl;
+
+    //delete_file(v[0].path, 0, v);
+
+    //cout << v.size()<<endl;
 
 
     
