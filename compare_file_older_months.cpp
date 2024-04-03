@@ -8,7 +8,7 @@ class File;
 using namespace std;
 
 // This function is for checking the file is older then user given month if it is then it returns true otherwise it returns false
-bool compare_months(string, vector<File> v, int i, int month)
+bool compare_months( vector<File> v, int i, int month)
 {
     // get the system time
     time_t tt;
