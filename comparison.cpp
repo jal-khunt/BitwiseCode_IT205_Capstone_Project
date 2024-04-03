@@ -1,12 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include "classFile.cpp" // Include the header file or definition of File class
+#include "universal.cpp"
 
-using namespace std;
-
-// Function to compare text files
 bool compare_text(const string& text1, const string& text2) {
     return text1 == text2;
 }
@@ -27,6 +20,7 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     return compare_text(content1, content2);
 }
 
+/*
 // Function to delete file
 void delete_file(const string& file_to_be_deleted, vector<File>& files, size_t index) {
     char f[file_to_be_deleted.size() + 1];
@@ -70,6 +64,7 @@ vector<File> inputFile(const string& input) {
     MyReadFile.close();
     return v;
 }
+*/
 
 // Function to compare files and delete duplicates
 void compareAndDelete(vector<File>& files) {

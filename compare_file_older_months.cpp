@@ -1,8 +1,4 @@
-#include <iostream>
-#include <ctime>
-#include <vector>
-#include <sstream>
-// #include "classFile.cpp"
+#include "universal.cpp"
 
 class File;
 
@@ -38,9 +34,4 @@ bool compare_months(string, vector<File> v, int i, int month)
     }
 
     return false;
-}
-
-int main()
-{
-    
 }

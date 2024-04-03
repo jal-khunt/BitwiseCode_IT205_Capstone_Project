@@ -7,10 +7,12 @@ int main(){
     cout << "Input file location: ";
     cin >> s;
     string file_extension = s.substr(s.length()-3, 3);
-    vector<File> v = inputFile("input.txt");
+
+    
+    vector<File> v;
 
     if(strcmp(file_extension, txt)){
-
+        v = inputFile("input.txt");
     }
     else if(strcmp(file_extension, csv)){
 
@@ -19,7 +21,9 @@ int main(){
         cout << "Please ecnter valid .txt or .csv files\n";
     }
 
-    //
+    //vector v is set;
+
+
     
     return 0;
 }

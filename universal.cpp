@@ -3,7 +3,7 @@
 #include <string>
 #include "classFile.cpp"
 #include "inputFile.cpp"
-#include "comparation.cpp"
+#include "comparaison.cpp"
 #include "compare_file_older_months.cpp" 
 #include "delete.cpp"
 
