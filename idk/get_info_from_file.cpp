@@ -23,7 +23,7 @@ class fileInfo
 
 int main()
 {
-    ifstream file("info.txt");
+    ifstream file("input.txt");
     fileInfo Cfile;
     
     vector<fileInfo> v;

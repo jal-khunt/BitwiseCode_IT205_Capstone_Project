@@ -1,12 +1,12 @@
-#include <iostream>
-#include <fstream>
+#include<iostream>
+#include<vector>
 #include <string>
-#include <vector>
-#include "classFile.cpp" // Include the header file or definition of File class
+#include <fstream>
 
-using namespace std;
+#include "classFile.cpp"
+#include "delete.cpp"
+#include "inputFile.cpp"
 
-// Function to compare text files
 bool compare_text(const string& text1, const string& text2) {
     return text1 == text2;
 }
@@ -27,6 +27,7 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     return compare_text(content1, content2);
 }
 
+/*
 // Function to delete file
 void delete_file(const string& file_to_be_deleted, vector<File>& files, size_t index) {
     char f[file_to_be_deleted.size() + 1];
@@ -70,6 +71,7 @@ vector<File> inputFile(const string& input) {
     MyReadFile.close();
     return v;
 }
+*/
 
 // Function to compare files and delete duplicates
 void compareAndDelete(vector<File>& files) {
@@ -77,14 +79,14 @@ void compareAndDelete(vector<File>& files) {
 
     for (size_t i = 0; i < files.size(); ++i) {
         for (size_t j = i + 1; j < files.size(); ++j) {
-            cout << "Comparing " << files[i].name << " and " << files[j].name << ": ";
+            cout << "Comparing " << files[i].path << " and " << files[j].path << ": ";
             if (!compareFiles(files[i].path, files[j].path)) {
                 cout << "Files are not equal." << endl;
                 allFilesEqual = false;
             } else {
                 cout << "Files are equal." << endl;
                 // Delete one of the files
-                delete_file(files[j].path, files, j); // Pass the index of the file to be deleted
+                delete_file(files[j].path, j, files); // Pass the index of the file to be deleted
             }
         }
     }
@@ -94,13 +96,4 @@ void compareAndDelete(vector<File>& files) {
     } else {
         cout << "Some files are not equal." << endl;
     }
-}
-
-int main() {
-    string inputFilePath = "input.txt"; // Path to input file
-    vector<File> files = inputFile(inputFilePath); // Read input file and get vector of File objects
-
-    compareAndDelete(files);
-
-    return 0;
 }
