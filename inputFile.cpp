@@ -1,10 +1,11 @@
 #include<vector> 
 #include<string>
+#include <sstream>
 #include<fstream>
 using namespace std;
 #include "classFile.cpp"
 
-vector<File> inputFile(string input){
+vector<File> inputFileTXT(string input){
 
     string pathOfFile,lastModifiedDate;
     int accessedNumber;
@@ -32,23 +33,28 @@ vector<File> inputFile(string input){
 
 }
 
-/*
-// Function to read input file and create vector of File objects
-vector<File> inputFile(const string& input) {
-    string pathOfFile, lastModifiedDate;
+vector<File> inputFileCSV(string input){
+
+    string pathOfFile,lastModifiedDate;
     int accessedNumber;
     vector<File> v;
     ifstream MyReadFile(input);
+    int i = 0;
 
-    while (MyReadFile >> pathOfFile >> lastModifiedDate >> accessedNumber) {
+    while (MyReadFile.eof()==0) {
+        
         File f;
-        f.path = pathOfFile;
-        f.dateModified = lastModifiedDate;
-        f.noOfTimeOpened = accessedNumber;
+        string line;
+        MyReadFile >> line;
+        char c[line.size()];
+        c[line.size()-1] = '\0';
+        for(int i = 0; i < line.size(); i++) c[i] = line[i];
+        sscanf(c, "%s,%s,%s", f.path, f.dateModified, f.noOfTimeOpened);
+        cout << f.path << " " << f.dateModified << " " << f.noOfTimeOpened << endl;
+        i++;
         v.push_back(f);
     }
-
     MyReadFile.close();
     return v;
+
 }
-*/

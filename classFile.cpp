@@ -16,4 +16,4 @@ class File{
 
 };
 
-#endif // CLASSFILE_H
+#endif
