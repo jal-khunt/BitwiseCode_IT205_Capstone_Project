@@ -91,7 +91,7 @@ void compareAndDelete(vector<File>& files) {
         }
     }
 
-    if (allFilesEqual) {
+     if(allFilesEqual) {
         cout << "All files are equal." << endl;
     } else {
         cout << "Some files are not equal." << endl;
