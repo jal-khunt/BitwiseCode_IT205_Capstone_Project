@@ -7,11 +7,13 @@
 #include "delete.cpp"
 #include "inputFile.cpp"
 
+// this function will check the text of content1 and content2 
 bool compare_text(const string& text1, const string& text2) {
     return text1 == text2;
 }
 
 // Function to compare files
+
 bool compareFiles(const string& filePath1, const string& filePath2) {
     ifstream file1(filePath1);
     ifstream file2(filePath2);
