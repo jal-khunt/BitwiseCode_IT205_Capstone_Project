@@ -1,5 +1,12 @@
+
+#ifndef CLASSFILE_H
+#define CLASSFILE_H
+
+
+#include<iostream>
 using namespace std;
 #include <string>
+
 class File{
     public:
 
@@ -8,3 +15,5 @@ class File{
     int noOfTimeOpened;
 
 };
+
+#endif
