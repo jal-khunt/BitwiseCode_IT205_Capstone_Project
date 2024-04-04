@@ -7,6 +7,11 @@
 #include "comparison.cpp"
 using namespace std;
 
+
+/*
+/home/shreyas/Desktop/testinput.txt
+*/
+
 class File;
 
 int strcmp(string s1, string s2){
@@ -24,7 +29,10 @@ int main(){
 
     string s, txt = "txt", csv = "csv";
     cout << "Input file location: ";
-    cin >> s;
+    
+    //cin >> s;   // testing
+    s = "/home/shreyas/Desktop/testinput.txt";
+    
     string file_extension = s.substr(s.length()-3, 3);
 
     
@@ -38,14 +46,41 @@ int main(){
     }
     else{
         cout << "Please enter valid .txt or .csv files\n";
+        return 0;
+    }
+
+    if(v.size() == 0){
+        return 0;
     }
 
     //vector v is set;
 
-    for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
+    //for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
+
+    cout << "File cleaner starting...\n\n";
+
+    //month
+    cout << "Removing Old Files..\nRemove files older than (in months): ";
+    int months = 0;
+    //cin >> months;
+    cout << "Removing files older than " << months << " months.";
+    //compare_months(v, month);
+    cout << endl << endl;
+
+    //comparing files and removing duplicates and files with same data
+
+    cout << "Removing duplicates and empty files...\n";
+    vector<int> c = compareAndDelete(v);
+    for(int i = 0; i < c.size(); i++) cout << c[i] << " ";
+    cout << endl << c.size() << " files have been removed succesfully :)\n\n";
+
+    //
+
+
 
 
 
     
     return 0;
 }
+
