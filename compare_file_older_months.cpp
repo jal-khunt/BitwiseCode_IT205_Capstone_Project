@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-#include <iostream>
-#include <ctime>
-#include <vector>
-#include <sstream>
-#include <>
-=======
 #include<iostream>
 #include<vector>
 #include <string>
 #include "classFile.cpp"
 
 class File;
->>>>>>> 5fca6a7c6474d9cf34c7da64f74fcff559c3f5dd
 
 using namespace std;
 class File;
