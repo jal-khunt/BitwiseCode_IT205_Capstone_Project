@@ -3,6 +3,7 @@
 #include <string>
 
 #include "classFile.cpp"
+#include "emptyfiles.cpp"
 //#include "compare_file_older_months.cpp"
 #include "comparison.cpp"
 using namespace std;
@@ -82,22 +83,28 @@ int main(){
     cout << "Removing Old Files..\nRemove files older than (in months): ";
     int months = 0;
     //cin >> months;
-    cout << "Removing files older than " << months << " months.";
+    cout << " Removing files older than " << months << " months.";
     //compare_months(v, month);
     cout << endl << endl;
 
 
     //Less than M times opened
-    cout << "Minimum number of times a file should have been opened: ";
+    cout << "Deleting unused/obsolete files:\n";
+    cout << " Minimum number of times a file should have been opened: ";
     int m;
     cin >> m;
     int c = lessThanMTimes(v, m);
-    cout << c << " file(s) have been removed succesfully :)\n\n";
+    cout << " " << c << " file(s) have been removed succesfully :)\n\n";
+
+    //deleting empty files
+    cout << "Checking for empty files and deleting them...\n";
+    int dE = deleteEmptyFiles(v);
+    cout << " " << dE << " empty file(s) have been removed successfully :)";
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
-    c = compareAndDelete(v);
-    cout << c << " file(s) have been removed succesfully :)\n\n";
+    int ca = compareAndDelete(v);
+    cout << ca << " file(s) have been removed succesfully :)\n\n";
 
     return 0;
 }
