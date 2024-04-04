@@ -4,14 +4,14 @@
 #include <string>
 
 using namespace std;
-
+/*
 // Define the File structure
 struct File {
     string path;
     string dateModified;
     int noOfTimeOpened;
 };
-
+*/
 // Function to delete empty files
 void deleteEmptyFiles(vector<File>& files) {
     for (size_t i = 0; i < files.size(); ++i) {
@@ -24,7 +24,7 @@ void deleteEmptyFiles(vector<File>& files) {
         }
     }
 }
-
+/*
 // Function to read input file and create vector of File objects
 vector<File> inputFile(const string& input) {
     string pathOfFile, lastModifiedDate;
@@ -43,7 +43,7 @@ vector<File> inputFile(const string& input) {
     MyReadFile.close();
     return v;
 }
-
+*/
 
 
 int main() {
