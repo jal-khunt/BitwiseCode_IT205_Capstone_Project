@@ -14,6 +14,18 @@ using namespace std;
 
 class File;
 
+
+int lessThanMTimes(vector<File> v, int m){
+    int count = 0;
+    for(int i = 0; i < v.size(); i++){
+        if(v[i].noOfTimeOpened < m){
+            delete_file(v[i].path,i,v);
+            count++;
+        }
+    }
+    cout << count;
+}
+
 int strcmp(string s1, string s2){
     if(s1.length() != s2.length()){
         return 0;
@@ -65,6 +77,12 @@ int main(){
     //compare_months(v, month);
     cout << endl << endl;
 
+
+    //Less than M times opened
+    cout << "Minimum number of times a file should have been opened: ";
+    int m;
+    cin >> m;
+    lessThanMTimes(v, m);
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
