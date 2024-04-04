@@ -7,8 +7,7 @@ using namespace std;
 
 vector<File> inputFileTXT(string input){
 
-    string pathOfFile,lastModifiedDate;
-    int accessedNumber;
+    
 
     vector<File> v;
     ifstream MyReadFile(input);
@@ -20,18 +19,24 @@ vector<File> inputFileTXT(string input){
     int i = 0;
 
     while (MyReadFile.eof()==0) {
+        string pathOfFile,lastModifiedDate;
+        int accessedNumber;
         
         File f;
-        v.push_back(f);
+        
         MyReadFile >> pathOfFile;
-        v[i].path = pathOfFile;
+        cout << pathOfFile << endl;
+        
+        if(pathOfFile.size() == 0)break;
+        f.path = pathOfFile;
 
 
         MyReadFile >> lastModifiedDate;
-        v[i].dateModified = lastModifiedDate;
+        f.dateModified = lastModifiedDate;
 
         MyReadFile >> accessedNumber;
-        v[i].noOfTimeOpened = accessedNumber;
+        f.noOfTimeOpened = accessedNumber;
+        v.push_back(f);
         i++;
     }
     MyReadFile.close();

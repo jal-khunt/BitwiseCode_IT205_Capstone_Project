@@ -14,6 +14,25 @@ using namespace std;
 
 class File;
 
+
+int lessThanMTimes(vector<File> &v, int m){
+    int count = 0;
+    for(int i = 0; i < v.size(); i++){
+        if(v[i].noOfTimeOpened < m){
+            delete_file(v[i].path,i,v);
+            count++;
+            i--;
+        }
+    }
+    return count;
+}
+
+void printl(vector<File> v){
+    for(int i = 0; i < v.size(); i++){
+        v[i].print();
+    }
+}
+
 int strcmp(string s1, string s2){
     if(s1.length() != s2.length()){
         return 0;
@@ -31,7 +50,7 @@ int main(){
     cout << "Input file location: ";
     
     //cin >> s;   // testing
-    s = "/home/shreyas/Desktop/testinput.txt";
+    s = "/home/shreyas/Desktop/testinput.csv";
     
     string file_extension = s.substr(s.length()-3, 3);
 
@@ -55,9 +74,11 @@ int main(){
 
     //vector v is set;
 
-    //for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
+    printl(v);
+    cout << endl;
 
     cout << "File cleaner starting...\n\n";
+
 
     //month
     cout << "Removing Old Files..\nRemove files older than (in months): ";
@@ -67,20 +88,21 @@ int main(){
     //compare_months(v, month);
     cout << endl << endl;
 
+
+    //Less than M times opened
+    cout << "Minimum number of times a file should have been opened: ";
+    int m;
+    cin >> m;
+    int c = lessThanMTimes(v, m);
+    cout << c << " files have been removed succesfully :)\n\n";
+
+    printl(v);
+
     //comparing files and removing duplicates and files with same data
+    cout << "Removing duplicates...\n";
+    c = compareAndDelete(v);
+    cout << endl << c << " files have been removed succesfully :)\n\n";
 
-    cout << "Removing duplicates and empty files...\n";
-    vector<int> c = compareAndDelete(v);
-    for(int i = 0; i < c.size(); i++) cout << c[i] << " ";
-    cout << endl << c.size() << " files have been removed succesfully :)\n\n";
-
-    //
-
-
-
-
-
-    
     return 0;
 }
 
