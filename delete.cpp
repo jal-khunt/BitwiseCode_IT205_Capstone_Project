@@ -33,9 +33,3 @@ void delete_file(string file_to_be_deleted, int index, vector<File> &F){
         cout << "File doesnt exist\n";
     }
 }
-
-void delete_array(vector<File> &F, vector<int> index){
-    for(int i = index.size()-1; i >= 0; i--){
-        delete_file(F[index[i]].path, i, F);
-    }
-}

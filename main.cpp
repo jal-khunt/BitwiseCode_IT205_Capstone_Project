@@ -68,16 +68,9 @@ int main(){
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
-    vector<int> c = compareAndDelete(v);
-    cout << endl << c.size() << " files have been removed succesfully :)\n\n";
-    delete_array(v, c);
+    int c = compareAndDelete(v);
+    cout << endl << c << " files have been removed succesfully :)\n\n";
 
-
-
-
-
-
-    
     return 0;
 }
 

@@ -87,18 +87,20 @@ void compareOneToAnother(string input,int i, vector<File> v){
 */
 
 // Function to compare files and delete duplicates
-vector<int> compareAndDelete(vector<File>& files) {
+int compareAndDelete(vector<File>& files) {
     vector<int> index;
-    bool allFilesEqual = true;
+    int count = 0;
 
     for (int i = 0; i < files.size(); ++i) {
         for (int j = i + 1; j < files.size(); ++j) {
 
             if (compareFiles(files[i].path, files[j].path)) {
                 // push file into the delete function
-                index.push_back(j);
+                delete_file(files[j].path, j, files);
+                count++;
+                j--;
             }
         }
     }
-    return index;
+    return count;
 }
