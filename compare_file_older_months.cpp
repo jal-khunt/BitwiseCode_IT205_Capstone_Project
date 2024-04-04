@@ -2,19 +2,16 @@
 #include <ctime>
 #include <vector>
 #include <sstream>
-// #include "classFile.cpp"
-
-class File;
+#include <>
 
 using namespace std;
+class File;
 
 bool compare_months(string, vector<File> v, int i, int month)
 {
     time_t tt;
     struct tm* ti;
-    
     time(&tt);
-    
     ti = localtime(&tt);
 
     int current_year = ti->tm_year + 1900, current_month = ti->tm_mon + 1;
