@@ -61,7 +61,7 @@ int main(){
 
     //comparing files and removing duplicates and files with same data
 
-    cout << "Removing duplicates...\n";
+    cout << "Removing duplicates and empty files...\n";
     int c = compareAndDelete(v);
     cout << c << " files have been removed succesfully :)\n\n";
 
