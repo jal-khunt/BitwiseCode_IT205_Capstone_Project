@@ -14,6 +14,9 @@ class File{
     string dateModified;
     int noOfTimeOpened;
 
+    void print(){
+        cout << path << "\t\t" << dateModified << "\t" << noOfTimeOpened << endl;
+    }
 };
 
 #endif
