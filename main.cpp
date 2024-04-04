@@ -31,7 +31,7 @@ int main(){
     cout << "Input file location: ";
     
     //cin >> s;   // testing
-    s = "/home/shreyas/Desktop/testinput.txt";
+    s = "/home/shreyas/Desktop/testinput.csv";
     
     string file_extension = s.substr(s.length()-3, 3);
 
@@ -55,8 +55,6 @@ int main(){
 
     //vector v is set;
 
-    //for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
-
     cout << "File cleaner starting...\n\n";
 
     //month
@@ -67,14 +65,13 @@ int main(){
     //compare_months(v, month);
     cout << endl << endl;
 
+
     //comparing files and removing duplicates and files with same data
-
-    cout << "Removing duplicates and empty files...\n";
+    cout << "Removing duplicates...\n";
     vector<int> c = compareAndDelete(v);
-    for(int i = 0; i < c.size(); i++) cout << c[i] << " ";
     cout << endl << c.size() << " files have been removed succesfully :)\n\n";
+    delete_array(v, c);
 
-    //
 
 
 
