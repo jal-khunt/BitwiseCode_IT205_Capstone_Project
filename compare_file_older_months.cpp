@@ -1,11 +1,20 @@
+<<<<<<< HEAD
+#include <iostream>
+#include <ctime>
+#include <vector>
+#include <sstream>
+#include <>
+=======
 #include<iostream>
 #include<vector>
 #include <string>
 #include "classFile.cpp"
 
 class File;
+>>>>>>> 5fca6a7c6474d9cf34c7da64f74fcff559c3f5dd
 
 using namespace std;
+class File;
 
 // This function is for checking the file is older then user given month if it is then it returns true otherwise it returns false
 bool compare_months( vector<File> v, int i, int month)
@@ -14,10 +23,12 @@ bool compare_months( vector<File> v, int i, int month)
 
     time_t tt;
     struct tm* ti;
-    
     time(&tt);
+<<<<<<< HEAD
+=======
     //new comment
     
+>>>>>>> 5fca6a7c6474d9cf34c7da64f74fcff559c3f5dd
     ti = localtime(&tt);
 
     // get the month and year in individual variables

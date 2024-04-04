@@ -25,11 +25,11 @@ class Date{
 
         year = x + y + z + a;
     }
-};
 
-int main(int argc, char const *argv[])
-{
-    Date d("25/12/2000");
-    cout << d.date << "-" << d.mounth << "-" << d.year << endl;
-    return 0;
+
+};
+void dateComparition(string lastModifiedDate,string todayDate){
+    Date dM(lastModifiedDate);
+    Date dT(todayDate);
+    
 }
