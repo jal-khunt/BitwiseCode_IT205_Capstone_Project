@@ -46,14 +46,14 @@ int strcmp(string s1, string s2){
 
 int main(){
 
+    //getting input file
+
     string s, txt = "txt", csv = "csv";
     cout << "Input file location: ";
-    
     //cin >> s;   // testing
     s = "/home/shreyas/Desktop/testinput.csv";
     
     string file_extension = s.substr(s.length()-3, 3);
-
     
     vector<File> v;
 
@@ -74,8 +74,6 @@ int main(){
 
     //vector v is set;
 
-    printl(v);
-    cout << endl;
 
     cout << "File cleaner starting...\n\n";
 
@@ -94,14 +92,12 @@ int main(){
     int m;
     cin >> m;
     int c = lessThanMTimes(v, m);
-    cout << c << " files have been removed succesfully :)\n\n";
-
-    printl(v);
+    cout << c << " file(s) have been removed succesfully :)\n\n";
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
     c = compareAndDelete(v);
-    cout << endl << c << " files have been removed succesfully :)\n\n";
+    cout << c << " file(s) have been removed succesfully :)\n\n";
 
     return 0;
 }
