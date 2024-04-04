@@ -24,6 +24,12 @@ void deleteEmptyFiles(vector<File>& files) {
         }
     }
 }
+
+/*
+for jenish
+In C++, ifstream::traits_type::eof() is a way to access the end-of-file (EOF) marker for the stream's character traits.
+*/  
+
 /*
 // Function to read input file and create vector of File objects
 vector<File> inputFile(const string& input) {
