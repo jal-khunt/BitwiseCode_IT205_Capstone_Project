@@ -16,11 +16,8 @@ bool compare_months( vector<File> v, int i, int month)
     time_t tt;
     struct tm* ti;
     time(&tt);
-<<<<<<< HEAD
-=======
     //new comment
     
->>>>>>> 5fca6a7c6474d9cf34c7da64f74fcff559c3f5dd
     ti = localtime(&tt);
 
     // get the month and year in individual variables
