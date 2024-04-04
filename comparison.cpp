@@ -7,10 +7,6 @@
 #include "delete.cpp"
 #include "inputFile.cpp"
 
-// this function will check the text of content1 and content2 
-bool compare_text(const string& text1, const string& text2) {
-    return text1 == text2;
-}
 
 // Function to compare files
 
@@ -26,7 +22,7 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
     string content1((istreambuf_iterator<char>(file1)), istreambuf_iterator<char>());
     string content2((istreambuf_iterator<char>(file2)), istreambuf_iterator<char>());
 
-    return compare_text(content1, content2);
+    return content1==content2;
 }
 
 /*
@@ -92,30 +88,18 @@ void compareOneToAnother(string input,int i, vector<File> v){
 */
 
 // Function to compare files and delete duplicates
-int compareAndDelete(vector<File>& files) {
-    int count = 0;
+vector<int> compareAndDelete(vector<File>& files) {
+    vector<int> index;
     bool allFilesEqual = true;
 
     for (size_t i = 0; i < files.size(); ++i) {
         for (size_t j = i + 1; j < files.size(); ++j) {
-            //cout << "Comparing " << files[i].path << " and " << files[j].path << "\n";
 
-            if (!compareFiles(files[i].path, files[j].path)) {
-                //cout << "Files are not equal." << endl;
-                allFilesEqual = false;
-            } else {
-                //cout << "Files are equal." << endl;
-                // Delete one of the files
-                delete_file(files[j].path, j, files); // Pass the index of the file to be deleted
-                count++;
+            if (i != j && compareFiles(files[i].path, files[j].path)) {
+                // push file into the delete function
+                index.push_back(j);
             }
         }
     }
-
-    if(allFilesEqual) {
-        cout << "All files are equal." << endl;
-    } else {
-        cout << "Some files are not equal." << endl;
-    }
-    return count;
+    return index;
 }

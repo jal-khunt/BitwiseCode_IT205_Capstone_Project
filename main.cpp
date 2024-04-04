@@ -7,6 +7,11 @@
 #include "comparison.cpp"
 using namespace std;
 
+
+/*
+/home/shreyas/Desktop/testinput.txt
+*/
+
 class File;
 
 int strcmp(string s1, string s2){
@@ -24,7 +29,10 @@ int main(){
 
     string s, txt = "txt", csv = "csv";
     cout << "Input file location: ";
-    cin >> s;
+    
+    //cin >> s;   // testing
+    s = "/home/shreyas/Desktop/testinput.txt";
+    
     string file_extension = s.substr(s.length()-3, 3);
 
     
@@ -53,8 +61,8 @@ int main(){
 
     //month
     cout << "Removing Old Files..\nRemove files older than (in months): ";
-    int months;
-    cin >> months;
+    int months = 0;
+    //cin >> months;
     cout << "Removing files older than " << months << " months.";
     //compare_months(v, month);
     cout << endl << endl;
@@ -62,8 +70,9 @@ int main(){
     //comparing files and removing duplicates and files with same data
 
     cout << "Removing duplicates and empty files...\n";
-    int c = compareAndDelete(v);
-    cout << c << " files have been removed succesfully :)\n\n";
+    vector<int> c = compareAndDelete(v);
+    for(int i = 0; i < c.size(); i++) cout << c[i] << " ";
+    cout << endl << c.size() << " files have been removed succesfully :)\n\n";
 
     //
 
