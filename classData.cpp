@@ -27,12 +27,9 @@ class Date{
     }
 
 
-    void dateComparition(string lastModifiedDate,string todayDate){
-        Date dM(lastModifiedDate);
-        Date dT(todayDate);
-
-        
-
-
-    }
 };
+void dateComparition(string lastModifiedDate,string todayDate){
+    Date dM(lastModifiedDate);
+    Date dT(todayDate);
+    
+}
