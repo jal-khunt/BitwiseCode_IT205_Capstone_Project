@@ -9,8 +9,14 @@ vector<File> inputFileTXT(string input){
 
     string pathOfFile,lastModifiedDate;
     int accessedNumber;
+
     vector<File> v;
     ifstream MyReadFile(input);
+    if (!MyReadFile.is_open()){
+        cout << "File does not exist." << endl;
+        return v;
+    }
+
     int i = 0;
 
     while (MyReadFile.eof()==0) {
@@ -46,8 +52,14 @@ vector<File> inputFileCSV(string input){
 
     string pathOfFile,lastModifiedDate;
     int accessedNumber;
+
     vector<File> v;
     ifstream MyReadFile(input);
+    if (!MyReadFile.is_open()){
+        cout << "File does not exist." << endl;
+        return v;
+    }
+    
     int i = 0;
 
     while (MyReadFile.eof()==0) {

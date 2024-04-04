@@ -92,26 +92,30 @@ void compareOneToAnother(string input,int i, vector<File> v){
 */
 
 // Function to compare files and delete duplicates
-void compareAndDelete(vector<File>& files) {
+int compareAndDelete(vector<File>& files) {
+    int count = 0;
     bool allFilesEqual = true;
 
     for (size_t i = 0; i < files.size(); ++i) {
         for (size_t j = i + 1; j < files.size(); ++j) {
-            cout << "Comparing " << files[i].path << " and " << files[j].path << ": ";
+            //cout << "Comparing " << files[i].path << " and " << files[j].path << "\n";
+
             if (!compareFiles(files[i].path, files[j].path)) {
-                cout << "Files are not equal." << endl;
+                //cout << "Files are not equal." << endl;
                 allFilesEqual = false;
             } else {
-                cout << "Files are equal." << endl;
+                //cout << "Files are equal." << endl;
                 // Delete one of the files
                 delete_file(files[j].path, j, files); // Pass the index of the file to be deleted
+                count++;
             }
         }
     }
 
-     if(allFilesEqual) {
+    if(allFilesEqual) {
         cout << "All files are equal." << endl;
     } else {
         cout << "Some files are not equal." << endl;
     }
+    return count;
 }

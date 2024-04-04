@@ -38,14 +38,40 @@ int main(){
     }
     else{
         cout << "Please enter valid .txt or .csv files\n";
+        return 0;
+    }
+
+    if(v.size() == 0){
+        return 0;
     }
 
     //vector v is set;
 
-    for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
+    //for(int i = 0; i < v.size(); i++) cout << v[i].path << " " << v[i].dateModified << " " << v[i].noOfTimeOpened << endl;
+
+    cout << "File cleaner starting...\n\n";
+
+    //month
+    cout << "Removing Old Files..\nRemove files older than (in months): ";
+    int months;
+    cin >> months;
+    cout << "Removing files older than " << months << " months.";
+    //compare_months(v, month);
+    cout << endl << endl;
+
+    //comparing files and removing duplicates and files with same data
+
+    cout << "Removing duplicates...\n";
+    int c = compareAndDelete(v);
+    cout << c << " files have been removed succesfully :)\n\n";
+
+    //
+
+
 
 
 
     
     return 0;
 }
+
