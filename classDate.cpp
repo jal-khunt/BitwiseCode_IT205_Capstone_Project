@@ -1,3 +1,6 @@
+#ifndef CLASSDATE_H
+#define CLASSDATE_H
+
 #include<iostream>
 using namespace std;
 #include <string>
@@ -34,3 +37,5 @@ void dateComparition(string lastModifiedDate,string todayDate){
     Date dT(todayDate);
 
 }
+
+#endif
