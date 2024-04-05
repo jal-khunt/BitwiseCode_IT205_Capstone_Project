@@ -34,7 +34,8 @@ int compareAndDelete(vector<File>& files) {
 
             if (compareFiles(files[i].path, files[j].path)) {
                 // push file into the delete function
-                delete_file(files[j].path, j, files);
+                int del = delete_file(files[j].path, j, files);
+                if(del == 0) continue;
                 count++;
                 j--;
             }

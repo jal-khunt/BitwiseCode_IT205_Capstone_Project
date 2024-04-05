@@ -25,14 +25,15 @@ int main(){
     cout << "testing?[1/0] ";
     cin >> testing;
     string s;
-    if(testing){
-        s = "/home/shreyas/Desktop/testinput.txt";
-        
-    }
-    else {
-        cout << "Input file location: ";
-        cin >> s;
-    }
+        if(testing){
+            s = "/home/shreyas/Desktop/testinput.txt";
+            
+        }
+        else {
+            cout << "Input file location: ";
+            cin >> s;
+        }
+
     vector<File> v;
 
     input_parser(v, s);
@@ -49,17 +50,17 @@ int main(){
 
 
     //removing old files
-        cout << "Removing Old Files..\nRemove files older than (in months): ";
+        cout << "Removing Old Files..\n\tRemove files older than (in months): ";
         int month = 0;
         cin >> month;
-        cout << " Removing files older than " << month << " months.";
+        cout << "\tRemoving files older than " << month << " months.";
         compare_months(v, month);
         cout << endl << endl;
 
 
     //Less than M times opened
         cout << "Deleting unused/obsolete files:\n";
-        cout << " Minimum number of times a file should have been opened: ";
+        cout << "\tMinimum number of times a file should have been opened: ";
         int m;
         cin >> m;
         int c = lessThanMTimes(v, m);
@@ -75,6 +76,9 @@ int main(){
         cout << "Removing duplicates...\n";
         int ca = compareAndDelete(v);
         cout << "\t" << ca << " file(s) have been removed succesfully :)\n\n";
+
+
+    cout << "\nProgram end\n";
 
     return 0;
 }
