@@ -32,10 +32,58 @@ class Date{
 
 
 };
-void dateComparition(string lastModifiedDate,string todayDate){
-    Date dM(lastModifiedDate);
-    Date dT(todayDate);
+int dateComparition(Date dM,Date dT){
 
+    if(dM.mounth == dT.mounth && dM.year == dT.year){
+        return 0;
+    }
+
+    else if(dM.year == dT.year){
+
+
+        if(dT.date > dM.date){
+            return dT.mounth - dM.mounth;
+        }
+
+
+        else if(dT.date < dM.date){
+            return dT.mounth - dM.mounth-1;
+        }
+
+
+    }
+
+    else{
+
+
+        if(dT.mounth>dM.mounth){
+            int yearMounth = (dT.year - dM.year)*12;
+            int mountMounth ;
+            if(dT.date > dM.date){
+                mountMounth = dT.mounth - dM.mounth;
+            }
+            else if(dT.date < dM.date){
+                mountMounth = dT.mounth - dM.mounth-1;
+            }
+        return yearMounth + mountMounth;
+        }
+
+
+        else if(dT.mounth<dM.mounth){
+            int yearMounth = (dT.year - dM.year - 1)*12;
+            int mountMounth ;
+            if(dT.date > dM.date){
+                mountMounth = dT.mounth + (12 - dM.mounth);
+            }
+            else if(dT.date < dM.date){
+                mountMounth = dT.mounth + (12 - dM.mounth) - 1;
+            }
+            return yearMounth + mountMounth;
+        }
+
+
+    }
 }
+
 
 #endif
