@@ -14,13 +14,14 @@ int deleteEmptyFiles(vector<File>& files) {
         ifstream file(files[i].path);
         string s;
         file >> s;
+        cout << s << endl;
 
         if (s.size() == 0) {
-            count++;
-            cout << "Deleting empty file: " << files[i].path << endl;
             file.close();
-            i--;
+            count++;
+            //i--;
         }
     }
+
     return count;
 }

@@ -4,7 +4,7 @@
 
 #include "classFile.cpp"
 #include "emptyfiles.cpp"
-//#include "compare_file_older_months.cpp"
+#include "compare_file_older_months.cpp"
 #include "comparison.cpp"
 using namespace std;
 
@@ -48,11 +48,19 @@ int strcmp(string s1, string s2){
 int main(){
 
     //getting input file
-
+    
     string s, txt = "txt", csv = "csv";
-    cout << "Input file location: ";
-    //cin >> s;   // testing
-    s = "/home/shreyas/Desktop/testinput.csv";
+
+    int testing;
+    cout << "testing?[1/0] ";
+    cin >> testing;
+
+
+    if(!testing){
+        cout << "Input file location: ";
+        cin >> s;
+    }
+    else s = "/home/shreyas/Desktop/testinput.csv";
     
     string file_extension = s.substr(s.length()-3, 3);
     
@@ -81,10 +89,10 @@ int main(){
 
     //month
     cout << "Removing Old Files..\nRemove files older than (in months): ";
-    int months = 0;
-    //cin >> months;
-    cout << " Removing files older than " << months << " months.";
-    //compare_months(v, month);
+    int month = 0;
+    cin >> month;
+    cout << " Removing files older than " << month << " months.";
+    compare_months(v, month);
     cout << endl << endl;
 
 
@@ -99,7 +107,7 @@ int main(){
     //deleting empty files
     cout << "Checking for empty files and deleting them...\n";
     int dE = deleteEmptyFiles(v);
-    cout << " " << dE << " empty file(s) have been removed successfully :)";
+    cout << " " << dE << " empty file(s) have been removed successfully :)\n\n";
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
