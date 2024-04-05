@@ -4,9 +4,9 @@
 
 #include "main_input.cpp"
 #include "classFile.cpp"
+#include "classDate.cpp"
 #include "Mtimes.cpp"
 #include "emptyfiles.cpp"
-#include "compare_months.cpp"
 #include "comparison.cpp"
 using namespace std;
 
@@ -55,9 +55,9 @@ int main(){
         cin >> month;
         cout << "\tToday's date: ";
         cin >> date;
-        cout << "\tRemoving files older than " << month << " months.";
-        int del_date = compare_months(v, month, date);
-        cout << "\t" << del_date << " file(s) have been removed succesfully :)\n\n";
+        cout << "\tRemoving files older than " << month << " months.\n";
+        int del_date = compare_month(v, month, date);
+        cout << "\t" << del_date << "file(s) have been removed succesfully :)\n\n";
         cout << endl << endl;
 
 

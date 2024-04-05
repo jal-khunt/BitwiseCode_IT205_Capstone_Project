@@ -3,7 +3,11 @@
 
 #include<iostream>
 using namespace std;
+#include <vector>
 #include <string>
+#include "classFile.cpp"
+#include "delete.cpp"
+
 
 class Date{
     public:
@@ -32,7 +36,10 @@ class Date{
 
 
 };
-int dateComparition(Date dM,Date dT){
+
+//return difference in days
+//dM = today, dT = file created date
+int dateComparison(Date dM,Date dT){
 
     if(dM.mounth == dT.mounth && dM.year == dT.year){
         return 0;
@@ -80,9 +87,32 @@ int dateComparition(Date dM,Date dT){
             }
             return yearMounth + mountMounth;
         }
-
-
     }
+    return 0;
+}
+
+
+int compare_month(vector<File> &v,int month, string todaysDate){
+    int count = 0;
+    Date todayDateObj(todaysDate);
+
+    for(int i = 0; i < v.size(); i++){
+        Date lastModifidedDateObj(v[i].dateModified);
+
+        int diffMonth = dateComparison(lastModifidedDateObj,todayDateObj);
+        
+        cout << "difference between " << v[i].dateModified << " and " << todaysDate << " = " << diffMonth << endl;
+
+        if(diffMonth > month){
+            if(delete_file(v[i].path,i,v)){
+                i--;
+                count++;
+            }
+        }
+    }
+
+    return count;
+
 }
 
 
