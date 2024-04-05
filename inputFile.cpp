@@ -25,7 +25,6 @@ vector<File> inputFileTXT(string input){
         File f;
         
         MyReadFile >> pathOfFile;
-        cout << pathOfFile << endl;
         
         if(pathOfFile.size() == 0)break;
         f.path = pathOfFile;

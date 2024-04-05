@@ -1,3 +1,6 @@
+#ifndef DELETE_H
+#define DELETE_H
+
 #include <iostream>
 using namespace std;
 
@@ -9,7 +12,8 @@ output:
     void
 */
 
-void delete_file(string file_to_be_deleted, int index, vector<File> &F){
+
+int delete_file(string file_to_be_deleted, int index, vector<File> &F){
 
     char f[file_to_be_deleted.size()+1];
     f[file_to_be_deleted.size()] = '\0';
@@ -27,9 +31,14 @@ void delete_file(string file_to_be_deleted, int index, vector<File> &F){
         }else{
             F.erase(F.begin() + index);
             remove(f);
+            return 1;
         }
     }
     else{
         cout << "File doesnt exist\n";
+        return 0;
     }
+    return 0;
 }
+
+#endif
