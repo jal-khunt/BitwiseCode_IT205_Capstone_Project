@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+#include "main_input.cpp"
 #include "classFile.cpp"
 #include "emptyfiles.cpp"
 #include "compare_file_older_months.cpp"
@@ -34,26 +35,15 @@ void printl(vector<File> v){
     }
 }
 
-int strcmp(string s1, string s2){
-    if(s1.length() != s2.length()){
-        return 0;
-    }
 
-    for(int i = 0; i < s1.length(); i++){
-        if(s1[i] != s2[i]) return 0;
-    }
-    return 1;
-}
 
 int main(){
 
     //getting input file
-    
-    string s, txt = "txt", csv = "csv", xls = "xls";
-
     int testing;
     cout << "testing?[1/0] ";
     cin >> testing;
+    string s;
     if(testing){
         s = "/home/shreyas/Desktop/testinput.txt";
         
@@ -62,30 +52,15 @@ int main(){
         cout << "Input file location: ";
         cin >> s;
     }
-    
-    string file_extension = s.substr(s.length()-3, 3);
-    
     vector<File> v;
 
-        if(strcmp(file_extension, txt)){
-            v = inputFileTXT(s);
-        }
-        else if(strcmp(file_extension, csv)){
-            v = inputFileCSV(s);
-        }
-        else if(strcmp(file_extension, xls)){
-            ;
-        }
-        else{
-            cout << "Please enter valid .txt or .csv files\n";
-            return 0;
-        }
+    input_parser(v, s);
 
         if(v.size() == 0){
             cout << "Empty file provided.\n";
             return 0;
         }
-
+        
     //vector v is set;
 
 

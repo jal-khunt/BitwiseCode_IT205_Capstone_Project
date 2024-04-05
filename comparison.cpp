@@ -5,7 +5,6 @@
 
 #include "classFile.cpp"
 #include "delete.cpp"
-#include "inputFile.cpp"
 
 
 // Function to compare files
