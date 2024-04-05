@@ -6,7 +6,7 @@
 #include "classFile.cpp"
 #include "Mtimes.cpp"
 #include "emptyfiles.cpp"
-#include "compare_file_older_months.cpp"
+#include "compare_months.cpp"
 #include "comparison.cpp"
 using namespace std;
 
@@ -51,9 +51,13 @@ int main(){
     //removing old files
         cout << "Removing Old Files..\n\tRemove files older than (in months): ";
         int month = 0;
+        string date;
         cin >> month;
+        cout << "\tToday's date: ";
+        cin >> date;
         cout << "\tRemoving files older than " << month << " months.";
-        compare_months(v, month);
+        int del_date = compare_months(v, month, date);
+        cout << "\t" << del_date << " file(s) have been removed succesfully :)\n\n";
         cout << endl << endl;
 
 
