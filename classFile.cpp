@@ -19,4 +19,10 @@ class File{
     }
 };
 
+void printl(vector<File> v){
+    for(int i = 0; i < v.size(); i++){
+        v[i].print();
+    }
+}
+
 #endif

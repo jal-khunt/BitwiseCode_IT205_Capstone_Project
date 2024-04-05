@@ -4,6 +4,7 @@
 
 #include "main_input.cpp"
 #include "classFile.cpp"
+#include "Mtimes.cpp"
 #include "emptyfiles.cpp"
 #include "compare_file_older_months.cpp"
 #include "comparison.cpp"
@@ -15,26 +16,6 @@ using namespace std;
 */
 
 class File;
-
-
-int lessThanMTimes(vector<File> &v, int m){
-    int count = 0;
-    for(int i = 0; i < v.size(); i++){
-        if(v[i].noOfTimeOpened < m){
-            delete_file(v[i].path,i,v);
-            count++;
-            i--;
-        }
-    }
-    return count;
-}
-
-void printl(vector<File> v){
-    for(int i = 0; i < v.size(); i++){
-        v[i].print();
-    }
-}
-
 
 
 int main(){
@@ -60,7 +41,7 @@ int main(){
             cout << "Empty file provided.\n";
             return 0;
         }
-        
+
     //vector v is set;
 
 
