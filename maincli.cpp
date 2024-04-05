@@ -60,7 +60,7 @@ int main(){
         cout << "Input file location: ";
         cin >> s;
     }
-    else s = "/home/shreyas/Desktop/testinput.csv";
+    else s = "/home/shreyas/Desktop/testinput.txt";
     
     string file_extension = s.substr(s.length()-3, 3);
     
@@ -78,6 +78,7 @@ int main(){
     }
 
     if(v.size() == 0){
+        cout << "Empty file provided.";
         return 0;
     }
 
@@ -87,7 +88,7 @@ int main(){
     cout << "File cleaner starting...\n\n";
 
 
-    //month
+    //removing old files
     cout << "Removing Old Files..\nRemove files older than (in months): ";
     int month = 0;
     cin >> month;
@@ -102,17 +103,18 @@ int main(){
     int m;
     cin >> m;
     int c = lessThanMTimes(v, m);
-    cout << " " << c << " file(s) have been removed succesfully :)\n\n";
+    cout << "\t" << c << " file(s) have been removed succesfully :)\n\n";
 
     //deleting empty files
     cout << "Checking for empty files and deleting them...\n";
     int dE = deleteEmptyFiles(v);
-    cout << " " << dE << " empty file(s) have been removed successfully :)\n\n";
+    cout << "\t" << dE << " empty file(s) have been removed successfully :)\n\n";
+
 
     //comparing files and removing duplicates and files with same data
     cout << "Removing duplicates...\n";
     int ca = compareAndDelete(v);
-    cout << ca << " file(s) have been removed succesfully :)\n\n";
+    cout << "\t" << ca << " file(s) have been removed succesfully :)\n\n";
 
     return 0;
 }

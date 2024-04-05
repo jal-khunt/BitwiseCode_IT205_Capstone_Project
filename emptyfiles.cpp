@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include "classFile.cpp"
+#include "delete.cpp"
 using namespace std;
 class File;
 
@@ -14,12 +15,12 @@ int deleteEmptyFiles(vector<File>& files) {
         ifstream file(files[i].path);
         string s;
         file >> s;
-        cout << s << endl;
-
         if (s.size() == 0) {
             file.close();
+            int in = delete_file(files[i].path, i, files);
             count++;
-            //i--;
+            if(in == 0) continue;
+            i--;
         }
     }
 
