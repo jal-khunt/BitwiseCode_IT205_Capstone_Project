@@ -49,72 +49,76 @@ int main(){
 
     //getting input file
     
-    string s, txt = "txt", csv = "csv";
+    string s, txt = "txt", csv = "csv", xls = "xls";
 
     int testing;
     cout << "testing?[1/0] ";
     cin >> testing;
-
-
-    if(!testing){
+    if(testing){
+        s = "/home/shreyas/Desktop/testinput.txt";
+        
+    }
+    else {
         cout << "Input file location: ";
         cin >> s;
     }
-    else s = "/home/shreyas/Desktop/testinput.txt";
     
     string file_extension = s.substr(s.length()-3, 3);
     
     vector<File> v;
 
-    if(strcmp(file_extension, txt)){
-        v = inputFileTXT(s);
-    }
-    else if(strcmp(file_extension, csv)){
-        v = inputFileCSV(s);
-    }
-    else{
-        cout << "Please enter valid .txt or .csv files\n";
-        return 0;
-    }
+        if(strcmp(file_extension, txt)){
+            v = inputFileTXT(s);
+        }
+        else if(strcmp(file_extension, csv)){
+            v = inputFileCSV(s);
+        }
+        else if(strcmp(file_extension, xls)){
+            ;
+        }
+        else{
+            cout << "Please enter valid .txt or .csv files\n";
+            return 0;
+        }
 
-    if(v.size() == 0){
-        cout << "Empty file provided.";
-        return 0;
-    }
+        if(v.size() == 0){
+            cout << "Empty file provided.\n";
+            return 0;
+        }
 
     //vector v is set;
 
 
-    cout << "File cleaner starting...\n\n";
+        cout << "File cleaner starting...\n\n";
 
 
     //removing old files
-    cout << "Removing Old Files..\nRemove files older than (in months): ";
-    int month = 0;
-    cin >> month;
-    cout << " Removing files older than " << month << " months.";
-    compare_months(v, month);
-    cout << endl << endl;
+        cout << "Removing Old Files..\nRemove files older than (in months): ";
+        int month = 0;
+        cin >> month;
+        cout << " Removing files older than " << month << " months.";
+        compare_months(v, month);
+        cout << endl << endl;
 
 
     //Less than M times opened
-    cout << "Deleting unused/obsolete files:\n";
-    cout << " Minimum number of times a file should have been opened: ";
-    int m;
-    cin >> m;
-    int c = lessThanMTimes(v, m);
-    cout << "\t" << c << " file(s) have been removed succesfully :)\n\n";
+        cout << "Deleting unused/obsolete files:\n";
+        cout << " Minimum number of times a file should have been opened: ";
+        int m;
+        cin >> m;
+        int c = lessThanMTimes(v, m);
+        cout << "\t" << c << " file(s) have been removed succesfully :)\n\n";
 
     //deleting empty files
-    cout << "Checking for empty files and deleting them...\n";
-    int dE = deleteEmptyFiles(v);
-    cout << "\t" << dE << " empty file(s) have been removed successfully :)\n\n";
+        cout << "Checking for empty files and deleting them...\n";
+        int dE = deleteEmptyFiles(v);
+        cout << "\t" << dE << " empty file(s) have been removed successfully :)\n\n";
 
 
     //comparing files and removing duplicates and files with same data
-    cout << "Removing duplicates...\n";
-    int ca = compareAndDelete(v);
-    cout << "\t" << ca << " file(s) have been removed succesfully :)\n\n";
+        cout << "Removing duplicates...\n";
+        int ca = compareAndDelete(v);
+        cout << "\t" << ca << " file(s) have been removed succesfully :)\n\n";
 
     return 0;
 }
