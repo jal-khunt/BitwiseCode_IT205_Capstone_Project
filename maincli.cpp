@@ -19,34 +19,33 @@ class File;
 
 
 int main(){
-
-    //getting input file
+    string s;
     int testing;
+    vector<File> v;
+
     cout << "testing?[1/0] ";
     cin >> testing;
-    string s;
         if(testing){
             s = "/home/shreyas/Desktop/testinput.txt";
             
         }
-        else {
+        else {  
+            //getting input file
             cout << "Input file location: ";
             cin >> s;
         }
 
-    vector<File> v;
 
-    input_parser(v, s);
+    input_parser(v, s);                          //vector v is set;
 
         if(v.size() == 0){
             cout << "Empty file provided.\n";
             return 0;
         }
+   
 
-    //vector v is set;
 
-
-        cout << "File cleaner starting...\n\n";
+    cout << "File cleaner starting...\n\n";
 
 
     //removing old files
@@ -59,8 +58,7 @@ int main(){
 
 
     //Less than M times opened
-        cout << "Deleting unused/obsolete files:\n";
-        cout << "\tMinimum number of times a file should have been opened: ";
+        cout << "Deleting unused/obsolete files:\n\tMinimum number of times a file should have been opened: ";
         int m;
         cin >> m;
         int c = lessThanMTimes(v, m);
