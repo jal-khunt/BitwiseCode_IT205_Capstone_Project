@@ -137,7 +137,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
                     int ca = compareAndDelete(v);
                     cout << ca << " file(s) have been removed succesfully :)\n\n";
 
-                    CreateWindowW(L"static", L"Finished.", WS_VISIBLE | WS_CHILD | WS_BORDER                    , 10 , 300, 350, 30, hWnd, NULL    , NULL, NULL);
+                    CreateWindowW(L"static", L"Finished.", WS_VISIBLE | WS_CHILD | WS_BORDER                    , 10 , 400, 350, 30, hWnd, NULL    , NULL, NULL);
 
                 }
                     
