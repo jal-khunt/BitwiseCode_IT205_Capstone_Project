@@ -17,19 +17,15 @@ comparison
 
 Manan 
 
-## File Class
+# File Class
 
-### Attributes:
+## Attributes:
 - `path`: string
 - `dateModified`: string
 - `noOfTimeOpened`: integer
 
-### Methods:
-#### `print()`:
-Prints the `path`, `dateModified`, and `noOfTimeOpened` attributes of the file.
-
-## Function `printl(v)`
-Prints the details of each file in the vector `v`.
+## Methods:
+- `print()`: Prints the `path`, `dateModified`, and `noOfTimeOpened` attributes of the file.
 
 # Pseudocode for Comparing Text Files
 
