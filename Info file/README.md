@@ -3,7 +3,8 @@ This is our Capstone Project of course IT205
 <br>
 BitwiseCode
 <br>
-manan 
+manan
+<br> 
 jenish
 shreyas
 jal
@@ -14,9 +15,10 @@ compare_file_older_months
 
 comparison
 
+Manan 
 # Pseudocode for Comparing Text Files
 
-## Function `compareFiles(filePath1, filePath2)`
+## Function `compareFiles(filePath1, filePath2)`:
 
 - Open `file1` and `file2` for reading
 - If either `file1` or `file2` cannot be opened:
@@ -27,7 +29,7 @@ comparison
 - Close `file1` and `file2`
 - Return `true` if `content1` is equal to `content2`, otherwise `false`
 
-## Function `compareAndDelete(files)`
+## Function `compareAndDelete(files)`:
 
 - Initialize an empty list `index`
 - Initialize `count` as 0
@@ -42,7 +44,7 @@ comparison
 
 # Pseudocode for Deleting Empty Files
 
-## Function `deleteEmptyFiles(files)`
+## Function `deleteEmptyFiles(files)`:
 
 - Initialize `count` as 0
 - For each `file` in `files`:
@@ -55,3 +57,25 @@ comparison
     - If `in` is 0, continue to the next iteration
     - Decrement `index` by 1 (to handle the case when a file is deleted)
 - Return `count`
+
+# Pseudocode for Deleting Function
+
+## Function `delete_file(file_to_be_deleted, index, F)`:
+
+- Create a character array `f` with size equal to the length of `file_to_be_deleted` + 1
+- Copy the characters of `file_to_be_deleted` into the character array `f`
+- Set the last character of `f` as '\0' to terminate the string
+- Open the `file_to_be_deleted` for reading
+- If the file is successfully opened:
+  - Close the file
+  - If `index` is less than 0 or greater than or equal to the size of `F`:
+    - Output "Invalid index"
+  - Else:
+    - Remove the File object at the specified index from vector `F`
+    - Delete the file from the filesystem
+    - Return 1 indicating successful deletion
+- Else:
+  - Output "File doesn't exist"
+  - Return 0 indicating failure
+- Return 0
+
