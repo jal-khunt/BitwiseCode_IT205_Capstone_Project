@@ -140,10 +140,5 @@ Manan
 - Create `todayDateObj` using `todaysDate`
 - For each file `f` in vector `v`:
   - Create `lastModifiedDateObj` using `f.dateModified`
-  - Calculate `diffMonth` using `dateComparison(lastModifiedDateObj, todayDateObj)`
-  - If `diffMonth` is greater than `month`:
-    - If `delete_file(f.path, index, v)` is successful:
-      - Decrement index by 1
-      - Increment count by 1
-- Return count
-```
+  - Calculate `diffMonth` using `
+
