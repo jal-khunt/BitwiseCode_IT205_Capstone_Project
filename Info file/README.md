@@ -140,5 +140,39 @@ Manan
 - Create `todayDateObj` using `todaysDate`
 - For each file `f` in vector `v`:
   - Create `lastModifiedDateObj` using `f.dateModified`
-  - Calculate `diffMonth` using `
+  - Calculate `diffMonth` using `dateComparison(lastModifiedDateObj, todayDateObj)`
+
+# Main Function
+
+## Steps:
+1. Declare variables `s` (string), `testing` (integer), and `v` (vector of File objects).
+2. Prompt the user with "testing?[1/0] " and read the input into variable `testing`.
+3. If `testing` is true (non-zero):
+   - Set `s` to "/home/shreyas/Desktop/testinput.txt".
+4. Else:
+   - Prompt the user with "Input file location: " and read the input into variable `s`.
+5. Call `input_parser(v, s)` to parse the input file and set the vector `v`.
+6. If the size of `v` is 0, output "Empty file provided." and end the program.
+7. Output "File cleaner starting...".
+8. Prompt the user with "Removing Old Files..\n\tRemove files older than (in months): " and read the input into variable `month`.
+9. Prompt the user with "\tToday's date: " and read the input into variable `date`.
+10. Output "\tRemoving files older than <month> months.".
+11. Call `compare_month(v, month, date)` to remove files older than the specified month.
+12. Output the number of files removed.
+13. If `v` is empty, output "Folder is empty" and end the program.
+14. Prompt the user with "Deleting unused/obsolete files:\n\tMinimum number of times a file should have been opened: " and read the input into variable `m`.
+15. Call `lessThanMTimes(v, m)` to remove files that have been opened fewer than `m` times.
+16. Output the number of files removed.
+17. If `v` is empty, output "Folder is empty" and end the program.
+18. Output "Checking for empty files and deleting them...".
+19. Call `deleteEmptyFiles(v)` to delete any empty files in the vector `v`.
+20. Output the number of empty files removed.
+21. If `v` is empty, output "Folder is empty" and end the program.
+22. Output "Removing duplicates...".
+23. Call `compareAndDelete(v)` to remove duplicate files.
+24. Output the number of duplicate files removed.
+25. If `v` is empty, output "Folder is empty" and end the program.
+26. Output "Program end".
+27. End the program.
+
 
