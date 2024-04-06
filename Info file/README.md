@@ -101,3 +101,46 @@ Manan
     - Increment count by 1
     - Decrement index by 1
 - Return count
+
+# Pseudocode for Month Comparison 
+
+## Class `Date`:
+
+Attributes:
+- `date`: integer
+- `month`: integer
+- `year`: integer
+    
+Constructor `Date(DateConvert)`:
+- Parse `DateConvert` string to extract date, month, and year
+- Assign parsed values to `date`, `month`, and `year` attributes
+
+Function `dateComparison(dM, dT)`:
+- If `dM.month` equals `dT.month` and `dM.year` equals `dT.year`:
+  - Return 0
+- Else if `dM.year` equals `dT.year`:
+  - If `dT.date` is greater than `dM.date`:
+    - Return `dT.month - dM.month`
+  - Else if `dT.date` is less than `dM.date`:
+    - Return `dT.month - dM.month - 1`
+- Else:
+  - If `dT.month` is greater than `dM.month`:
+    - Calculate `yearMonth` as `(dT.year - dM.year) * 12`
+    - Calculate `monthMonth` based on `dT.date` and `dM.date`
+    - Return `yearMonth + monthMonth`
+  - Else if `dT.month` is less than `dM.month`:
+    - Calculate `yearMonth` as `(dT.year - dM.year - 1) * 12`
+    - Calculate `monthMonth` based on `dT.date` and `dM.date`
+    - Return `yearMonth + monthMonth`
+
+Function `compare_month(v, month, todaysDate)`:
+- Initialize count as 0
+- Create `todayDateObj` using `todaysDate`
+- For each file `f` in vector `v`:
+  - Create `lastModifiedDateObj` using `f.dateModified`
+  - Calculate `diffMonth` using `dateComparison(lastModifiedDateObj, todayDateObj)`
+  - If `diffMonth` is greater than `month`:
+    - If `delete_file(f.path, index, v)` is successful:
+      - Decrement index by 1
+      - Increment count by 1
+- Return count
