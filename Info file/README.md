@@ -115,7 +115,7 @@ Constructor `Date(DateConvert)`:
 - Parse `DateConvert` string to extract date, month, and year
 - Assign parsed values to `date`, `month`, and `year` attributes
 
-Function `dateComparison(dM, dT)`:
+## Function `dateComparison(dM, dT)`:
 - If `dM.month` equals `dT.month` and `dM.year` equals `dT.year`:
   - Return 0
 - Else if `dM.year` equals `dT.year`:
@@ -133,7 +133,8 @@ Function `dateComparison(dM, dT)`:
     - Calculate `monthMonth` based on `dT.date` and `dM.date`
     - Return `yearMonth + monthMonth`
 
-Function `compare_month(v, month, todaysDate)`:
+## Function `compare_month(v, month, todaysDate)`:
+
 - Initialize count as 0
 - Create `todayDateObj` using `todaysDate`
 - For each file `f` in vector `v`:
@@ -144,3 +145,4 @@ Function `compare_month(v, month, todaysDate)`:
       - Decrement index by 1
       - Increment count by 1
 - Return count
+
