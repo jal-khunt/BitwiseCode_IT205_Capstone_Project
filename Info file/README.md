@@ -17,6 +17,7 @@ comparison
 
 Manan 
 
+```markdown
 # File Class
 
 ## Attributes:
@@ -26,6 +27,16 @@ Manan
 
 ## Methods:
 - `print()`: Prints the `path`, `dateModified`, and `noOfTimeOpened` attributes of the file.
+
+# Class Date
+
+## Attributes:
+- `date`: integer
+- `month`: integer
+- `year`: integer
+
+## Constructor:
+- `Date(DateConvert)`: Parses `DateConvert` string to extract date, month, and year, and assigns parsed values to `date`, `month`, and `year` attributes.
 
 # Pseudocode for Comparing Text Files
 
@@ -104,18 +115,8 @@ Manan
 
 # Pseudocode for Month Comparison 
 
-## Class `Date`:
-
-Attributes:
-- `date`: integer
-- `month`: integer
-- `year`: integer
-    
-Constructor `Date(DateConvert)`:
-- Parse `DateConvert` string to extract date, month, and year
-- Assign parsed values to `date`, `month`, and `year` attributes
-
 ## Function `dateComparison(dM, dT)`:
+
 - If `dM.month` equals `dT.month` and `dM.year` equals `dT.year`:
   - Return 0
 - Else if `dM.year` equals `dT.year`:
@@ -145,4 +146,4 @@ Constructor `Date(DateConvert)`:
       - Decrement index by 1
       - Increment count by 1
 - Return count
-
+```
