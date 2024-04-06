@@ -8,7 +8,8 @@
 
 
 // Function to compare files
-
+// Time Complexity->O(m + n) where m and n are size of file
+// Space Complexity->O(m + n) where m and n are size of file
 bool compareFiles(const string& filePath1, const string& filePath2) {
     ifstream file1(filePath1);
     ifstream file2(filePath2);

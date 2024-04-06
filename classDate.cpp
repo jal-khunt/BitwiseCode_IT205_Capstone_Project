@@ -39,6 +39,7 @@ class Date{
 
 //return difference in days
 //dM = today, dT = file created date
+//Time Complexity->O(1)     Space Complexity->O(1)
 int dateComparison(Date dM,Date dT){
 
     if(dM.mounth == dT.mounth && dM.year == dT.year){
