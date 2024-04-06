@@ -4,7 +4,8 @@
 #include<fstream>
 using namespace std;
 #include "classFile.cpp"
-
+// Time Complexity->O(n) where n is the number of lines in the input file.
+// Space Complexity->O(n) where n is the number of lines in the input file.
 vector<File> inputFileTXT(string input){
 
     
@@ -52,6 +53,9 @@ int str_int(string str){
     return sum;
 }
 
+
+// Time Complexity->O(n * m), where n is the number of lines in the input file and m is the average length of a line.
+// Space Complexity->O(n), where n is the number of lines in the input file.
 vector<File> inputFileCSV(string input){
 
     string pathOfFile,lastModifiedDate;
