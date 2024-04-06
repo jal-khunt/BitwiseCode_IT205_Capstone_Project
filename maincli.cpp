@@ -23,17 +23,10 @@ int main(){
     int testing;
     vector<File> v;
 
-    cout << "testing?[1/0] ";
-    cin >> testing;
-        if(testing){
-            s = "C:/Users/tajdu/Desktop/input.txt";
-            
-        }
-        else {  
-            //getting input file
-            cout << "Input file location: ";
-            cin >> s;
-        }
+    //getting input file
+    cout << "Input file location: ";
+    cin >> s;
+
 
 
     int x = input_parser(v, s);                          //vector v is set;
