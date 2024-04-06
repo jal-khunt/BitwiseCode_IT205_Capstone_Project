@@ -90,3 +90,14 @@ Manan
   - Return 0 indicating failure
 - Return 0
 
+# Pseudocode for Mtimes Function
+
+## Function `lessThanMTimes(v, m)`:
+
+- Initialize count as 0
+- For each file f in vector v:
+  - If f.noOfTimeOpened < m:
+    - Call delete_file(f.path, index, v) and store result in del
+    - Increment count by 1
+    - Decrement index by 1
+- Return count
