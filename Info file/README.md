@@ -15,9 +15,10 @@ compare_file_older_months
 
 comparison
 
-Manan 
 
-# File Class
+
+
+# Class File
 
 ## Attributes:
 - `path`: string
@@ -26,6 +27,16 @@ Manan
 
 ## Methods:
 - `print()`: Prints the `path`, `dateModified`, and `noOfTimeOpened` attributes of the file.
+
+# Class Date
+
+## Attributes:
+- `date`: integer
+- `month`: integer
+- `year`: integer
+
+## Constructor:
+- `Date(DateConvert)`: Parses `DateConvert` string to extract date, month, and year, and assigns parsed values to `date`, `month`, and `year` attributes.
 
 # Pseudocode for Comparing Text Files
 
@@ -89,4 +100,79 @@ Manan
   - Output "File doesn't exist"
   - Return 0 indicating failure
 - Return 0
+
+# Pseudocode for Mtimes Function
+
+## Function `lessThanMTimes(v, m)`:
+
+- Initialize count as 0
+- For each file f in vector v:
+  - If f.noOfTimeOpened < m:
+    - Call delete_file(f.path, index, v) and store result in del
+    - Increment count by 1
+    - Decrement index by 1
+- Return count
+
+# Pseudocode for Month Comparison 
+
+## Function `dateComparison(dM, dT)`:
+
+- If `dM.month` equals `dT.month` and `dM.year` equals `dT.year`:
+  - Return 0
+- Else if `dM.year` equals `dT.year`:
+  - If `dT.date` is greater than `dM.date`:
+    - Return `dT.month - dM.month`
+  - Else if `dT.date` is less than `dM.date`:
+    - Return `dT.month - dM.month - 1`
+- Else:
+  - If `dT.month` is greater than `dM.month`:
+    - Calculate `yearMonth` as `(dT.year - dM.year) * 12`
+    - Calculate `monthMonth` based on `dT.date` and `dM.date`
+    - Return `yearMonth + monthMonth`
+  - Else if `dT.month` is less than `dM.month`:
+    - Calculate `yearMonth` as `(dT.year - dM.year - 1) * 12`
+    - Calculate `monthMonth` based on `dT.date` and `dM.date`
+    - Return `yearMonth + monthMonth`
+
+## Function `compare_month(v, month, todaysDate)`:
+
+- Initialize count as 0
+- Create `todayDateObj` using `todaysDate`
+- For each file `f` in vector `v`:
+  - Create `lastModifiedDateObj` using `f.dateModified`
+  - Calculate `diffMonth` using `dateComparison(lastModifiedDateObj, todayDateObj)`
+
+# Main Function
+
+## Steps:
+1. Declare variables `s` (string), `testing` (integer), and `v` (vector of File objects).
+2. Prompt the user with "testing?[1/0] " and read the input into variable `testing`.
+3. If `testing` is true (non-zero):
+   - Set `s` to "/home/shreyas/Desktop/testinput.txt".
+4. Else:
+   - Prompt the user with "Input file location: " and read the input into variable `s`.
+5. Call `input_parser(v, s)` to parse the input file and set the vector `v`.
+6. If the size of `v` is 0, output "Empty file provided." and end the program.
+7. Output "File cleaner starting...".
+8. Prompt the user with "Removing Old Files..\n\tRemove files older than (in months): " and read the input into variable `month`.
+9. Prompt the user with "\tToday's date: " and read the input into variable `date`.
+10. Output "\tRemoving files older than <month> months.".
+11. Call `compare_month(v, month, date)` to remove files older than the specified month.
+12. Output the number of files removed.
+13. If `v` is empty, output "Folder is empty" and end the program.
+14. Prompt the user with "Deleting unused/obsolete files:\n\tMinimum number of times a file should have been opened: " and read the input into variable `m`.
+15. Call `lessThanMTimes(v, m)` to remove files that have been opened fewer than `m` times.
+16. Output the number of files removed.
+17. If `v` is empty, output "Folder is empty" and end the program.
+18. Output "Checking for empty files and deleting them...".
+19. Call `deleteEmptyFiles(v)` to delete any empty files in the vector `v`.
+20. Output the number of empty files removed.
+21. If `v` is empty, output "Folder is empty" and end the program.
+22. Output "Removing duplicates...".
+23. Call `compareAndDelete(v)` to remove duplicate files.
+24. Output the number of duplicate files removed.
+25. If `v` is empty, output "Folder is empty" and end the program.
+26. Output "Program end".
+27. End the program.
+
 
