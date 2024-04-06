@@ -5,7 +5,7 @@
 #include "inputFile.cpp"
 #include "classFile.cpp"
 using namespace std;
-
+//O(n^2) where n is length of vector
 int strcmp(string s1, string s2){
     if(s1.length() != s2.length()){
         return 0;
@@ -16,7 +16,7 @@ int strcmp(string s1, string s2){
     }
     return 1;
 }
-
+//O(n^2)
 int input_parser(vector<File> &v, string s){
     string txt = "txt", csv = "csv", xls = "xls";
 

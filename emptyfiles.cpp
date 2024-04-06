@@ -6,7 +6,8 @@
 #include "delete.cpp"
 using namespace std;
 class File;
-
+//Time Complexity->O(n^2) where n is size of the vector if all files are emply
+//Space Complexity->O(1)
 int deleteEmptyFiles(vector<File>& files) {
     int count = 0;
 

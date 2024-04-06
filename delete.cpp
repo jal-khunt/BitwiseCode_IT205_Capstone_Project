@@ -12,7 +12,8 @@ output:
     void
 */
 
-
+//Time Complexity:O(n) where n is the size of vector
+//Space Complexity:O(m) where m is the size of char string
 int delete_file(string file_to_be_deleted, int index, vector<File> &F){
 
     char f[file_to_be_deleted.size()+1];
