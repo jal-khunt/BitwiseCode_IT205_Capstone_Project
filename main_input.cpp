@@ -32,8 +32,10 @@ int input_parser(vector<File> &v, string s){
             ;
         }
         else{
-            cout << "Please enter valid .txt or .csv files\n";
+            //cout << "Please enter valid .txt or .csv files\n";
             return 0;
         }
+
+        if(v.size() == 0) return 2;
         return 1;
 }

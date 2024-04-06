@@ -26,7 +26,7 @@ int main(){
     cout << "testing?[1/0] ";
     cin >> testing;
         if(testing){
-            s = "/home/shreyas/Desktop/testinput.txt";
+            s = "C:/Users/tajdu/Desktop/input.txt";
             
         }
         else {  
@@ -36,7 +36,13 @@ int main(){
         }
 
 
-    input_parser(v, s);                          //vector v is set;
+    int x = input_parser(v, s);                          //vector v is set;
+    if(x == 0){
+        cout << "Please enter valid .txt or .csv files\n";
+    }
+    else if(x == 2){
+        cout << "File does not exist\n";
+    }
 
         if(v.size() == 0){
             cout << "Empty file provided.\n";

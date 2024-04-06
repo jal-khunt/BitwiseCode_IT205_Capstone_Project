@@ -60,7 +60,7 @@ vector<File> inputFileCSV(string input){
     vector<File> v;
     ifstream MyReadFile(input);
     if (!MyReadFile.is_open()){
-        cout << "File does not exist." << endl;
+        //cout << "File does not exist." << endl;
         return v;
     }
     
