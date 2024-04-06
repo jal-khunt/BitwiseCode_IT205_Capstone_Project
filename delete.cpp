@@ -35,7 +35,7 @@ int delete_file(string file_to_be_deleted, int index, vector<File> &F){
         }
     }
     else{
-        cout << "File doesnt exist\n";
+        cout << "\tFile doesnt exist\n";
         return 0;
     }
     return 0;

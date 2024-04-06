@@ -101,8 +101,6 @@ int compare_month(vector<File> &v,int month, string todaysDate){
 
         int diffMonth = dateComparison(lastModifidedDateObj,todayDateObj);
         
-        cout << "difference between " << v[i].dateModified << " and " << todaysDate << " = " << diffMonth << endl;
-
         if(diffMonth > month){
             if(delete_file(v[i].path,i,v)){
                 i--;

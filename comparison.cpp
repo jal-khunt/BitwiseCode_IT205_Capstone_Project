@@ -15,7 +15,7 @@ bool compareFiles(const string& filePath1, const string& filePath2) {
 
     if (!file1 || !file2) {
         //cout << filePath1 << " " << filePath2;
-        cerr << "Error opening files." << endl;
+        cerr << "\tError opening files." << endl;
         return false;
     }
 

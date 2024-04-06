@@ -59,6 +59,10 @@ int main(){
         int del_date = compare_month(v, month, date);
         cout << "\t" << del_date << "file(s) have been removed succesfully :)\n\n";
         cout << endl << endl;
+        if(v.empty()){
+            cout << "\nFolder is empty\n";
+            return 0;
+        }
 
 
     //Less than M times opened
@@ -67,17 +71,29 @@ int main(){
         cin >> m;
         int c = lessThanMTimes(v, m);
         cout << "\t" << c << " file(s) have been removed succesfully :)\n\n";
+        if(v.empty()){
+            cout << "\nFolder is empty\n";
+            return 0;
+        }
 
     //deleting empty files
         cout << "Checking for empty files and deleting them...\n";
         int dE = deleteEmptyFiles(v);
         cout << "\t" << dE << " empty file(s) have been removed successfully :)\n\n";
+        if(v.empty()){
+            cout << "\nFolder is empty\n";
+            return 0;
+        }
 
 
     //comparing files and removing duplicates and files with same data
         cout << "Removing duplicates...\n";
         int ca = compareAndDelete(v);
         cout << "\t" << ca << " file(s) have been removed succesfully :)\n\n";
+        if(v.empty()){
+            cout << "\nFolder is empty\n";
+            return 0;
+        }
 
 
     cout << "\nProgram end\n";
