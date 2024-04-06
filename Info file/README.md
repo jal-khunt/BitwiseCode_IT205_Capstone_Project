@@ -18,7 +18,7 @@ comparison
 Manan 
 
 
-# File Class
+# Class File
 
 ## Attributes:
 - `path`: string
