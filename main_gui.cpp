@@ -1,4 +1,14 @@
 #include <windows.h>
+#include <iostream>
+#include <vector>
+#include <string>
+
+#include "main_input.cpp"
+#include "classFile.cpp"
+#include "Mtimes.cpp"
+#include "emptyfiles.cpp"
+#include "compare_file_older_months.cpp"
+#include "comparison.cpp"
 
 void f1(){}
 void f2(){}
@@ -30,6 +40,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
                         HWND hEdit = GetDlgItem(hWnd, 2);
                         int len = GetWindowTextLengthW(hEdit);
                         wchar_t* buffer = new wchar_t[len + 1];
+                        cout << *buffer << endl;
                         GetWindowTextW(hEdit, buffer, len + 1);
                         MessageBoxW(hWnd, buffer, L"Input", MB_OK);
                         delete[] buffer;
@@ -53,7 +64,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp){
 }
 
 
-
+//"main" function 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow){
     WNDCLASSW wc = {0};
 
