@@ -16,6 +16,21 @@ compare_file_older_months
 comparison
 
 Manan 
+
+## File Class
+
+### Attributes:
+- `path`: string
+- `dateModified`: string
+- `noOfTimeOpened`: integer
+
+### Methods:
+#### `print()`:
+Prints the `path`, `dateModified`, and `noOfTimeOpened` attributes of the file.
+
+## Function `printl(v)`
+Prints the details of each file in the vector `v`.
+
 # Pseudocode for Comparing Text Files
 
 ## Function `compareFiles(filePath1, filePath2)`:
