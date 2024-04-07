@@ -21,7 +21,7 @@ jal
 - **Responsibility:** Deleting files older than a certain date & file not accessed atleast M number of times.
   
 ### Shreyas:
-- **Responsibility:**  CLI, function called for deleting files and removing their entrues, and complete gui, debugging of almost all files to ensure compatibility, support for csv files, and error handling
+- **Responsibility:**  CLI, function called for deleting files and removing their entries, and complete gui, debugging of almost all files to ensure compatibility, support for csv files, and error handling
 
 
 
