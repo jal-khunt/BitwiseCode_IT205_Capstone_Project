@@ -12,20 +12,17 @@ jal
 ## Work Distribution
 
 ### Jenish:
-- **Responsibility:** Input File Handling and Data Interpretation
-- **Description:** Jenish is tasked with the crucial responsibility of managing input files. Their role involves handling input files effectively, extracting relevant data, and interpreting it accurately. This includes developing functionalities to read input files and returning processed data as an array, ensuring seamless data flow throughout the system.
+- **Responsibility:** Input file handling, returning an array wih all interpreted data from input file.
 
 ### Manan:
-- **Responsibility:** File Comparison to Identify Deletions and Empty Files
-- **Description:** Manan is focused on comparing data across files to determine which files have been deleted and identifying those that are empty. Their role involves implementing algorithms to compare file contents efficiently, aiding in decision-making processes regarding file management and cleanup.
+- **Responsibility:** Compares data in files to deterine which is deleted and which files are empty.
 
 ### Jal:
-- **Responsibility:** File Deletion Based on Date and Access Frequency
-- **Description:** Jal is responsible for managing file deletion operations based on specific criteria. This includes developing functionalities to identify and delete files older than a certain date and those that haven't been accessed a minimum number of times. Their role contributes significantly to maintaining system cleanliness and optimizing storage resources.
-
+- **Responsibility:** Deleting files older than a certain date & file not accessed atleast M number of times.
+  
 ### Shreyas:
-- **Responsibility:** Command-Line Interface (CLI) and Redundancy Handling
-- **Description:** Shreyas is leading the development of the command-line interface, enabling users to interact with the system seamlessly. Additionally, they are tasked with implementing functionalities to handle redundancy issues, particularly concerning files with identical names. Their role ensures user-friendly interaction and efficient file management within the system.
+- **Responsibility:**  CLI, redundancy of files with same name.
+
 
 
 Class file created for storing file and its details
