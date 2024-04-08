@@ -12,10 +12,10 @@ jal
 ## Work Distribution
 
 ### Jenish:
-- **Responsibility:** Input file handling, returning an array wih all interpreted data from input file.
+- **Responsibility:** Input file handling, returning an array wih all interpreted data from input file and functions making and complexity checker.
 
 ### Manan:
-- **Responsibility:** Compares data in files to deterine which is deleted and which files are empty.
+- **Responsibility:** Compares data in files to deterine which is deleted and which files are empty with csv file conplare and write pseudocode.
 
 ### Jal:
 - **Responsibility:** Deleting files older than a certain date & file not accessed atleast M number of times.
