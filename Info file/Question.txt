@@ -1,0 +1,17 @@
+Question Statement:
+
+You are to build a Folder Cleaner. It deletes files that are:
+1. Redundant files (i.e., a newer copy is present)
+2. Files old for more than N number of months,
+3. Empty files (i.e., no content),
+4. Files that have not been accessed for at least M number of times.
+
+
+● Input data will be a file (can be txt or xls) with records in the format:
+    <Folder name> <Files in the folder> <File created date>
+
+work distribution as of now:
+Jenish: Input file handling, returning an array wih all interpreted data from input file.
+Manan: Compares data in files to deterine which is deleted and which files are empty.
+Jal: Deleting files older than a certain date & file not accessed atleast M number of times.
+Shreyas: CLI, redundancy of files with same name, 
